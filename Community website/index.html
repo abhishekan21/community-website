@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Community Website</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Community Web</h1>
+    <nav>
+      <ul> 
+        <li onclick="showSection('Group')">Group</li>
+        <li onclick="showSection('forum')">Forum</li>
+        <li onclick="showSection('chat')">Chat</li>
+        <li onclick="showSection('events')">Events</li>
+        <li onclick="showSection('notifications')">Notifications</li>
+        <li onclick="showSection('polls')">Polls</li>
+        <li onclick="showSection('media')">Media</li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+     <!-- Group -->
+      <section id="Group" class="active">
+        <h2>Create/Join Group</h2>
+        <button>Create Group</button>
+        <button>Join Group</button>
+      </section>
+
+    <!-- Forum -->
+    <section id="forum" >
+      <h2>Forum Discussions</h2>
+      <textarea placeholder="Start a discussion..."></textarea>
+      <button>Post</button>
+     
+    </section>
+
+   
+
+    <!-- Chat -->
+    <section id="chat">
+      <h2>Live Chat</h2>
+      <div id="chat-box"></div>
+      <input type="text" id="chat-input" placeholder="Type a message..."/>
+      <button onclick="sendMessage()">Send</button>
+    </section>
+
+    <!-- Events -->
+    <section id="events">
+      <h2>Upcoming Events</h2>
+      <ul>
+        <li><strong>Workshop:</strong> React - June 30</li>
+        <li><strong>Q&A Session:</strong> Ask Me Anything - July 3</li>
+      </ul>
+    </section>
+
+    <!-- Notifications -->
+    <section id="notifications">
+      <h2>Notifications</h2>
+      <div class="notification">🔔 New reply in "Forum: Project 1"</div>
+      <div class="notification">📅 Event "Ask Me Anything" starts in 7 days!</div>
+    </section>
+
+    <!-- Polls -->
+    <section id="polls">
+      <h2>Weekly Poll</h2>
+      <p>Which front-end framework do you prefer?</p>
+      <button onclick="vote('React')">React</button>
+      <button onclick="vote('Vue')">Vue</button>
+      <button onclick="vote('Angular')">Angular</button>
+      <div id="poll-result"></div>
+    </section>
+
+    <!-- Media Sharing -->
+    <section id="media">
+      <h2>Media Sharing</h2>
+      <input type="file" accept="image/*" onchange="previewImage(event)">
+      <div id="media-preview"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
